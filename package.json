@@ -4,7 +4,7 @@
   "description": "A server-rendered site that displays headlines from the Financial Times.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js"
   },
   "keywords": [
     "api",
@@ -13,5 +13,10 @@
     "headlines"
   ],
   "author": "Zuzana Kunckova",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.7"
+  }
 }
