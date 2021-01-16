@@ -25,7 +25,7 @@ headlinesForm.addEventListener('submit', (e) => {
 
     const headers = new Headers({
         'Content-Type':'application/json',
-        'X-Api-Key': process.env.API_KEY,
+        'X-Api-Key': API_KEY,
     })
 
     fetch('https://api.ft.com/content/search/v1', {
