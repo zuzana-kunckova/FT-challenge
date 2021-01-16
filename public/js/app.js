@@ -39,6 +39,9 @@ headlinesForm.addEventListener('submit', (e) => {
             if (data.error || headlines === undefined) {
                 loading.textContent = ''
                 headlinesContent.textContent = "Invalid search term, please try again"
+            } else if (search.value === '') {
+                    loading.textContent = ''
+                    headlinesContent.textContent = "Please use a search term"
             } else {
                 loading.textContent = ''
                 headlinesContent.innerHTML = ''
