@@ -25,10 +25,10 @@ headlinesForm.addEventListener('submit', (e) => {
 
     const headers = new Headers({
         'Content-Type':'application/json',
-        'X-Api-Key': API_KEY,
+        'X-Api-Key': apiKey,
     })
 
-    fetch('https://api.ft.com/content/search/v1', {
+    fetch('https://cors-anywhere.herokuapp.com/https://api.ft.com/content/search/v1', {
         method: 'POST',
         headers: headers,
         body,
