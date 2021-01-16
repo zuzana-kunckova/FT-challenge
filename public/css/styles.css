@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF0E4;
+}
+
+.nav-wrapper {
+    border-top: 1px solid #ccc1b7;
+    border-bottom: 1px solid #ccc1b7;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 16px;
+    padding: 8px 0;
+}
+
+nav ul li a {
+    color: #262B33;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+nav ul li a:hover {
+    color: #0a5e66;
+}
+
+.wrapper {
+    background-color: #F2DFCE;
+}
+
+form {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+input {
+    font-size: 14px;
+    line-height: 16px;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0 8px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 50%;
+    flex-grow: 1;
+}
+
+button {
+    background-color: #262B33;
+    color: #FFF0E4;
+    border: 1px solid #262B33;
+    padding: 8px;
+}
+
+.headlines {
+    margin: 20px auto;
+    max-width: 750px;
+}
+
+.headlines ul {
+    font-size: 20px;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.headlines ul li {
+    border-bottom: 1px solid #ccc1b7;
+    padding-bottom: 20px;
+    line-height: 1.6;
+}
+
+.headlines ul li a {
+    color: #990f3d;
+    margin: 10px 0;
+}
+
+.headlines ul li p {
+    color: #736c67;
+}
+
+.headlines ul li span {
+    font-size: 16px;
+    color: #736c67;
+}
+
+footer {
+    background-color: #262B33;
+}
+
+footer a {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+/*Media queries*/
+@media only screen and (min-width: 600px)  {
+    .title {
+        text-align: center;
+        font-size: 48px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
