@@ -13,7 +13,17 @@
     <p class="loading"></p>
 
     <div class="headlines">
+        {{#each headlines }}
+            <ul>
+                <li>
+                    <a href="{{this.location.uri}}">{{this.title.title}}</a>
+                    <p>{{this.editorial.subheading}}</p>
+<!--                    <span>By {{this.editorial.byline}}</span>-->
+                </li>
+            </ul>
+        {{/each}}
     </div>
+
 </div>
 {{>footer}}
 

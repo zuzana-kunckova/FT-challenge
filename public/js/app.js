@@ -7,10 +7,10 @@ headlinesForm.addEventListener('submit', (e) => {
     e.preventDefault()
     loading.textContent = 'Loading ...'
 
-    fetch('/search', {
+    fetch('/', {
         method: 'POST',
         body: JSON.stringify({
-            search: search.value
+            searchTerm: search.value
         }),
         headers: {
             'Content-Type' : 'application/json'
@@ -21,12 +21,10 @@ headlinesForm.addEventListener('submit', (e) => {
         })
         .then((data) => {
             const headlines = data.results[0].results
+
             if (data.error || headlines === undefined) {
                 loading.textContent = ''
                 headlinesContent.textContent = "Invalid search term, please try again"
-            } else if (search.value === '') {
-                loading.textContent = ''
-                headlinesContent.textContent = "Please use a search term"
             } else {
                 loading.textContent = ''
                 headlinesContent.innerHTML = ''
@@ -36,7 +34,7 @@ headlinesForm.addEventListener('submit', (e) => {
                             <li>
                                  <a href="${hl.location.uri}">${hl.title.title}</a>
                                  <p>${hl.editorial.subheading}</p>
-                                 <span>By ${hl.editorial.byline}</span>
+<!--                                 <span>By ${hl.editorial.byline}</span>-->
                             </li>
                         </ul>
                     `

@@ -2,7 +2,7 @@
   "name": "financialtimesheadlines",
   "version": "1.0.0",
   "description": "A server-rendered site that displays headlines from The Financial Times.",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "test": "jest --watch"
