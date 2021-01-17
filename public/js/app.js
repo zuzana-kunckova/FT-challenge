@@ -5,43 +5,28 @@ const loading = document.querySelector('.loading')
 
 headlinesForm.addEventListener('submit', (e) => {
     e.preventDefault()
-
     loading.textContent = 'Loading ...'
-    headlinesContent.textContent = ''
 
-    const body = JSON.stringify({
-        queryString: search.value,
-        queryContext: {
-            curations: [
-                'ARTICLES',
-                'BLOGS',
-                'PAGES',
-            ]
-        },
-        resultContext: {
-            aspects :['title','lifecycle','location','summary','editorial' ]
-        }
-    });
-
-    const headers = new Headers({
-        'Content-Type':'application/json',
-        'X-Api-Key': apiKey,
-    })
-
-    fetch('https://cors-anywhere.herokuapp.com/https://api.ft.com/content/search/v1', {
+    fetch('/search', {
         method: 'POST',
-        headers: headers,
-        body,
-    }).then(response => response.json())
-        .then(data => {
+        body: JSON.stringify({
+            search: search.value
+        }),
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    })
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
             const headlines = data.results[0].results
-
             if (data.error || headlines === undefined) {
                 loading.textContent = ''
                 headlinesContent.textContent = "Invalid search term, please try again"
             } else if (search.value === '') {
-                    loading.textContent = ''
-                    headlinesContent.textContent = "Please use a search term"
+                loading.textContent = ''
+                headlinesContent.textContent = "Please use a search term"
             } else {
                 loading.textContent = ''
                 headlinesContent.innerHTML = ''
@@ -57,5 +42,8 @@ headlinesForm.addEventListener('submit', (e) => {
                     `
                 })
             }
+        })
+        .catch((error) => {
+            console.log(error)
         })
 })
