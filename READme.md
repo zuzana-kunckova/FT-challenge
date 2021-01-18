@@ -6,11 +6,11 @@ Even though I was not given a deadline to complete this task, I set my own deadl
 In this week, I learned how to work with Node.js, Express.js and Handlebars, and I implemented the basic search functionality. Although I work with JavaScript on the client side, my main programming language is PHP, and this is my first app I built with Node.js and Express.js. 
 
 ## Task requirements
-This website is responsive and accessible. I decided against using any CSS frameworks due to the small size of this website; the overhead would have been unjustified. Furthermore, due to the simple design, I decided not to use any CSS preprocessors or build tools. Instead, I decided to write plain CSS. I made the website responsive by using `@media` queries in CSS, and made sure it was accessible by using colours with sufficient contrast. I used a label on the search form to make sure it was clear to screen readers what the form is to be used for, and I made sure it was accessible by the keyboard only. The Lighthouse report gave this website full marks for performance, accessibility, best practises and SEO. 
+This website is responsive and accessible. I decided against using any CSS frameworks due to the small size of this website; the overhead would have been unjustified. Furthermore, due to the simple design, I decided not to use any CSS preprocessors or build tools. Instead, I decided to write plain CSS. I made the website responsive by using `@media` queries in CSS, and made sure it was accessible by using colours with sufficient contrast. I used a label on the search form to make sure it was clear to screen readers what the form is to be used for, and I made sure it was accessible by the keyboard only. The Chrome Lighthouse report gave this website full marks for accessibility, best practises and SEO. 
 
-The website performs well over 3G networks mainly due to its small size, and the fact that it isn't using any images. I made sure that even if the CSS file failed to load, the website would still be usable.
+The website performs well over 3G networks, and it is a progressive web app (PWA). I created the website manifest, generated the required icons, and registered the service worker. 
 
-I used the same colour palette as [The Financial Times](https://ft.com) website, giving it the same look and feel.
+I used the same colour palette as [The Financial Times](https://ft.com) website, giving it the same look and feel, but I created a custom favicon and icons needed for the website manifest.
 
 I didn't use any JavaScript framework or libraries, except for Express.JS, and the website is deployed on Heroku. 
 
@@ -19,7 +19,6 @@ I didn't use any JavaScript framework or libraries, except for Express.JS, and t
 To run this project locally, run `npm install` to install all npm dependencies.
 
 To start the local development server, run `node src/app.js` or `nodemon src/app.js -e js,hbs,css` to keep your  server running and watching all changes made to JavaScript, Handlebars and CSS files. 
-
 You may need to restart `nodemon` occasionally as it sometimes fails to register the changes.
 
 ## Further information
@@ -43,7 +42,6 @@ I used Postman to make sure the search was returning the correct results.
 ## Next steps
 - Implement unit testing with Jest
 - Implement pagination
-- Implement PWA
 - Refactor the `getHeadline.js` function to a class to make it easier to test and extend
 
 ## Author

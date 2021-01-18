@@ -1,0 +1,31 @@
+{
+  "name": "Financial Times",
+  "short_name": "FT",
+  "display": "standalone",
+  "theme_color": "#FFF0E4",
+  "background_color": "#FFF0E4",
+  "icons": [
+    {
+      "src": "./img/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/"
+}

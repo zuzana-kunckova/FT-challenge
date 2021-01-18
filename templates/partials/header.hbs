@@ -6,12 +6,19 @@
           content="width=device-width, user-scalable=yes, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Fetch headlines from The Financial Times">
+    <meta name="theme-color" content="#FFF0E4">
     <title>Financial Times headlines</title>
     <link rel="stylesheet" href="/css/styles.css">
 
-    <link rel="icon" href="/img/apple-touch-icon-180x180.png" type="image/png">
-    <link rel="icon" href="/img/favicon-32x32.png" type="image/png">
-    <link rel="icon" href="/img/favicon-194x194.png" type="image/png">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon-180x180.png" type="image/png">
+    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: './' })
+        }
+    </script>
 </head>
 <body>
     <div class="content">
