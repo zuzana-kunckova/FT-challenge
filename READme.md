@@ -1,7 +1,7 @@
 ## About this project
 This is a server-rendered site that displays headlines from The Financial Times. It uses JavaScript to handle the search functionality on the client side, Node.js to work on the backend, ExpressJS framework for Node.js, node-fetch package to make it possible to make fetch call in Node.js, and Handlebars, templating engine to generate the HTML. No JavaScript or CSS framework has been used to build this site.
 
-Even though I was not given a deadline to complete this task, I set my own deadline of one week + weekend. There are always things that could be done to make the site better, but a deadline stops me from loosing focus. I outlined the potential improvements in the [Next steps](#Next steps) section below.
+Even though I was not given a deadline to complete this task, I set my own deadline of one week + weekend. There are always things that could be done to make the site better, but a deadline stops me from loosing focus. I outlined the potential improvements in the Next Steps section below.
 
 In this week, I learned how to work with Node.js, Express.js and Handlebars, and I implemented the basic search functionality. Although I work with JavaScript on the client side, my main programming language is PHP, and this is my first app I built with Node.js and Express.js. 
 
@@ -27,7 +27,7 @@ You may need to restart `nodemon` occasionally as it sometimes fails to register
 The home page displays the latest headlines by sending a POST request to The Financial Times Headlines API. The requirement of the API is to include the `Content-Type` and `X-Api-Key` headers. To keep the API key secure, I created a `.env` file and used the `dotenv` npm package to access the key in the Fetch call. 
 
 The body of the call consists of the following values:
-1. `queryString` - this is passed from the search form or set to an empty string to display the latest headlines. The client side JavaScript file (`public/js/app.js`) takes the form search input value, and using the Fetch API passes the value to the backend run with NodeJs.
+1. `queryString` - this is passed from the search form or set to an empty string to display the latest headlines. The client side JavaScript file (`public/js/app.js`) takes the form search input value, and using the Fetch API passes the value to the backend run with NodeJs. I sanitised the search input by the Express-validator package.
  
 2. `queryContext` - this is set to display the headlines of articles, blogs and pages
   

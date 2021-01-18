@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const bodyParser = require('body-parser')
+const { body } = require('express-validator')
 
 const getHeadlines = require('./ft/headlines')
 
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
         .then(data => {
             return res.render('index', {
                 title: 'Financial Times Headlines',
-                author: 'Zuzana',
+                author: 'Zuzana Kunckova',
                 script: true,
                 headlines: data.results[0].results
             })
@@ -35,22 +36,24 @@ app.get('/', (req, res) => {
         })
 })
 
-app.post('/', (req, res) => {
-    const search = req.body.searchTerm
-    getHeadlines(search)
-        .then(resp => resp.json())
-        .then(data => {
-            return res.send(data)
-        })
-        .catch((error) => {
-            res.status(500).send({error})
-        })
+app.post('/',
+    body('searchTerm').trim().escape(),
+    (req, res) => {
+        const search = req.body.searchTerm
+        getHeadlines(search)
+            .then(resp => resp.json())
+            .then(data => {
+                return res.send(data)
+            })
+            .catch((error) => {
+                res.status(500).send({error})
+            })
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About this app',
-        author: 'Zuzana'
+        title: 'Financial Times Headlines',
+        author: 'Zuzana Kunckova'
     })
 })
 
