@@ -34,7 +34,6 @@ headlinesForm.addEventListener('submit', (e) => {
                             <li>
                                  <a href="${hl.location.uri}">${hl.title.title}</a>
                                  <p>${hl.editorial.subheading}</p>
-<!--                                 <span>By ${hl.editorial.byline}</span>-->
                             </li>
                         </ul>
                     `

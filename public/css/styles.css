@@ -8,7 +8,7 @@ body {
 }
 
 .content {
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 50px);
 }
 
 .nav-wrapper {
@@ -140,6 +140,7 @@ footer a {
     display: flex;
     align-items: center;
     height: 50px;
+    width: 200px;
 }
 
 /*Media queries*/
